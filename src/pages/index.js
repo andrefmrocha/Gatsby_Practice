@@ -29,7 +29,7 @@ const IndexPage = ({data}) => (
 
 export const pageQuery = graphql`
          query IndexQuery {
-           allMarkdownRemark(limit: 1000, filter: { frontmatter: { published: { eq: true } } }) {
+           allMarkdownRemark(limit: 1000, filter: { frontmatter: { published: { eq: true } } }, sort: { fields: [frontmatter___date], order: ASC }) {
              edges {
                node {
                  id
@@ -37,6 +37,7 @@ export const pageQuery = graphql`
                    title
                    path
                    published
+                   date
                  }
                }
              }
