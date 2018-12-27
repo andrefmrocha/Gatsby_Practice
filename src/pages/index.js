@@ -26,13 +26,13 @@ const IndexPage = ({data}) => (
             <ListItemText>
               <ExpansionPanel>
                 <ExpansionPanelSummary>
+                  <Link key={post.node.id}
+                  to={post.node.frontmatter.path}>
                   {post.node.frontmatter.title}
+                  </Link>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
-                  <Link key={post.node.id}
-                    to={post.node.frontmatter.path}>
                     {post.node.frontmatter.subtitle}
-                  </Link>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
             </ListItemText>
