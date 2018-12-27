@@ -1,6 +1,7 @@
 ---
 path: "/second-christmas-post"
 title: "It's still christmas"
+subtitle: "Come learn about Christmassy React"
 published: true
 date: '2018-12-26'
 ---
