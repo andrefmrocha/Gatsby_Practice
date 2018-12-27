@@ -35,7 +35,20 @@ module.exports = {
         name: 'pages',
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve:`gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-emoji', // <-- this adds emoji
+            options: {
+              // default emojiConversion --> shortnameToUnicode
+              emojiConversion: 'shortnameToUnicode',
+          }
+          },  // <-- this line adds emoji
+        ]
+      }
+    },
     {
       resolve: '@wapps/gatsby-plugin-material-ui',
       options:{
@@ -45,6 +58,6 @@ module.exports = {
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+    'gatsby-plugin-offline',
   ],
 }
